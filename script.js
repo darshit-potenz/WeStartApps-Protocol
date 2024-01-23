@@ -1,7 +1,3 @@
-
-
-// Event listener for button click
-document.getElementById("startAnimationButton").addEventListener("click", startAnimation);
 var messageContainers = document.querySelectorAll(".messages-container");
 var typingIndicators = document.querySelectorAll(".typing");
 var messageTone = document.getElementById("messageTone");
@@ -186,6 +182,28 @@ function displayMessages(container, messagesArray, containerIndex, messageIndex,
         addMessage(container, message, function () {
             setTimeout(function () {
                 displayMessages(container, messagesArray, containerIndex, messageIndex + 1, callback);
+
+                // Check if the current container is #messages7
+                if (containerIndex === 6 && messageIndex === messagesArray.length - 1) {
+                    // Animation for #messages7 is complete
+                    // Show all elements with classes like ".plans-details-wrap1", ".plans-details-wrap2", ".plans-details-wrap3"
+                    var plansDetailsWraps = document.querySelectorAll(".plans-details-wrap1, .plans-details-wrap2, .plans-details-wrap3");
+
+                    // Function to reveal elements with a scroll effect
+                    function revealElementsWithScroll(index) {
+                        if (index < plansDetailsWraps.length) {
+                            plansDetailsWraps[index].style.display = "block";
+                            plansDetailsWraps[index].scrollIntoView({ behavior: "smooth" });
+
+                            setTimeout(function () {
+                                revealElementsWithScroll(index + 1);
+                            }, 1000); // Adjust the delay between elements as needed (in milliseconds)
+                        }
+                    }
+
+                    // Start revealing elements with a scroll effect
+                    revealElementsWithScroll(0);
+                }
             }, delay);
         });
     } else {
@@ -199,6 +217,10 @@ function displayMessages(container, messagesArray, containerIndex, messageIndex,
         }
     }
 }
+
+
+
+
 
 // Function to calculate dynamic time delay based on current and next messages
 function calculateDynamicDelay(currentMessage, nextMessage) {

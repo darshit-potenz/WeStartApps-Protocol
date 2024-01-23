@@ -20,13 +20,25 @@ header {
     align-items: center;
     justify-content: space-between;
 }
-
-button {
+#startAnimationButton{
     margin: 10px;
     box-shadow: 5px 4px 20px lightgray;
     padding: 10px;
     border-radius: 20px;
     border: 1px solid black;
+}
+button {
+    display: flex;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    padding: 9.59px 15.624px 9.61px 16px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 16px;
+    background: rgba(0, 0, 0, 0.21);
+    border: 0;
+    font-weight: 500;
 }
 
 .nav-button {
@@ -59,14 +71,12 @@ section {
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.typing {
-    color: #000;
-    background-color: #f7f7f7;
-    border-radius: 16px;
-    padding: 8px 14px;
-    font-size: 16px;
+.time-text{
+    color: #888;
+    align-self: center;
+    font-size: 14px;
     font-weight: 400;
-    line-height: 1.3;
+    line-height: 1.2;
 }
 
 .message-section-left,
@@ -139,11 +149,143 @@ section {
     margin: auto;
 }
 
+
+.plans-term p {
+    color: rgba(0, 0, 0, 0.48);
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.3;
+    margin: 0;
+}
+
+.plans-details-2 {
+    display: flex;
+    padding: 12px 16px;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-shrink: 0;
+    background: #F7F7F7;
+    border-radius: 16px;
+}
+
+.plans-info-wrap {
+    display: flex;
+    /* width: 224px; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4px;
+    flex-shrink: 0;
+}
+
+.plan-info {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.plan-info p {
+    margin: 0;
+}
+
+.plan-info .color {
+    color: #D12323;
+}
+
+.plan-info .pink {
+    color: #DD31CF;
+}
+
+.bg-grey {
+    background: #444;
+}
+
+.color-white {
+    color: white;
+}
+
+.bg-white {
+    background: white;
+}
+
+.bg-lightGrey {
+    background: rgba(255, 255, 255, 0.21);
+}
+
+.plans-head h2 .light-grey {
+    color: rgba(255, 255, 255, 0.48);
+}
+
+.plans-term .light-grey {
+    color: rgba(255, 255, 255, 0.48);
+}
+.chat-button {
+    background: rgba(0, 0, 0, 0.08);
+}
+.plans-details-wrap1, .plans-details-wrap2, .plans-details-wrap3 {
+    display: none;
+    border-radius: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 16px;
+}
+
+.plans-details-1 {
+    padding: 12px 16px 11.99px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.plans-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 18px;
+}
+
+.plans-head h2 {
+    margin: 0;
+    font-weight: 500;
+}
+
+.plans-head h2 span {
+    color: rgba(0, 0, 0, 0.48);
+}
+
+.plans-description p {
+    font-size: 16px;
+    margin: 0;
+}
+
+.plans-button {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.plans-button.w-inline-block{
+    font-weight: 500;
+    text-decoration: none;
+    color: inherit;
+}
+.chat-button.bg-lightGrey{
+    background-image: linear-gradient(rgba(255, 255, 255, .21), rgba(255, 255, 255, .21));
+    color: white;
+}
+
 @media screen and (max-width: 479px) {
     .message-section-left,
     .message-section-right {
         padding-left: 5%;
         padding-right: 5%;
+    }
+    .plans-details-2 {
+        display: flex;
+        flex-direction: column;
     }
 }
 
@@ -168,5 +310,12 @@ section {
     .message-section-right {
         padding-left: 34%;
         padding-right: 34%;
+    }
+}
+@media screen and (min-width: 1920px){
+    .message-section-left,
+    .message-section-right {
+        padding-left: 37%;
+        padding-right: 37%;
     }
 }
